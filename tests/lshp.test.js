@@ -52,7 +52,9 @@ describe("test tt likes", () => {
     const result = listHelper.ttlikes(blogs);
     expect(result).toBe(30);
   });
+});
 
+describe("test most likes", () => {
   test("most likes", () => {
     const y = {
       title: "React patterns",
