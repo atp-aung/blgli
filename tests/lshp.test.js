@@ -54,6 +54,13 @@ describe("test tt likes", () => {
   });
 });
 
+describe("test author with most blogs", () => {
+  test("total blogs", () => {
+    const result = listHelper.mostBlgs(blogs);
+    expect(result).toBe(2);
+  });
+});
+
 describe("test most likes", () => {
   test("most likes", () => {
     const y = {

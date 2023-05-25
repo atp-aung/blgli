@@ -17,6 +17,15 @@ const favBlgs = (blogs) => {
   return obj;
 };
 
+const mostBlgs = (b) => {
+  const aa = b.reduce(
+    (c, { author: key }) => ((c[key] = (c[key] || 0) + 1), c),
+    {}
+  );
+  const bb = Math.max(...Object.values(aa));
+  return bb;
+};
+
 const ttlikes = (ar) => {
   const reducer = (sum, item) => {
     return sum + item.likes;
@@ -29,4 +38,5 @@ module.exports = {
   ttlikes,
   dd,
   favBlgs,
+  mostBlgs,
 };
