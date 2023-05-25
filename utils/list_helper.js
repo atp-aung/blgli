@@ -16,15 +16,7 @@ const favBlgs = (blogs) => {
   };
   return obj;
 };
-// let maxValue = -Infinity;
-// let maxKey = '';
 
-// for (const [key, value] of Object.entries(obj)) {
-//   if (value > maxValue) {
-//     maxValue = value;
-//     maxKey = key;
-//   }
-// }
 const mostBlgs = (b) => {
   const aa = b.reduce((c, { author: k }) => ((c[k] = (c[k] || 0) + 1), c), {});
   let maxv = -Infinity;
