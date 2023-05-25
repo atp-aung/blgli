@@ -16,13 +16,26 @@ const favBlgs = (blogs) => {
   };
   return obj;
 };
+// let maxValue = -Infinity;
+// let maxKey = '';
 
+// for (const [key, value] of Object.entries(obj)) {
+//   if (value > maxValue) {
+//     maxValue = value;
+//     maxKey = key;
+//   }
+// }
 const mostBlgs = (b) => {
-  const aa = b.reduce(
-    (c, { author: key }) => ((c[key] = (c[key] || 0) + 1), c),
-    {}
-  );
-  const bb = Math.max(...Object.values(aa));
+  const aa = b.reduce((c, { author: k }) => ((c[k] = (c[k] || 0) + 1), c), {});
+  let maxv = -Infinity;
+  let maxk = "";
+  for (const [key, value] of Object.entries(aa)) {
+    if (value > maxv) {
+      maxv = value;
+      maxk = key;
+    }
+  }
+  const bb = { author: maxk, blogs: maxv };
   return bb;
 };
 

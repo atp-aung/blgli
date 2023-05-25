@@ -56,8 +56,12 @@ describe("test tt likes", () => {
 
 describe("test author with most blogs", () => {
   test("total blogs", () => {
+    const y = {
+      author: "Edsger W. Dijkstra",
+      blogs: 2,
+    };
     const result = listHelper.mostBlgs(blogs);
-    expect(result).toBe(2);
+    expect(result).toEqual(y);
   });
 });
 
