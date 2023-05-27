@@ -6,7 +6,7 @@ const blogs = [
     title: "React patterns",
     author: "Michael Chan",
     url: "https://reactpatterns.com/",
-    likes: 10,
+    likes: 11,
     __v: 0,
   },
   {
@@ -50,7 +50,7 @@ describe("test value one", () => {
 describe("test tt likes", () => {
   test("total likes", () => {
     const result = listHelper.ttlikes(blogs);
-    expect(result).toBe(30);
+    expect(result).toBe(31);
   });
 });
 
@@ -65,12 +65,23 @@ describe("test author with most blogs", () => {
   });
 });
 
+describe("test author with most likes", () => {
+  test("total likes", () => {
+    const y = {
+      author: "Edsger W. Dijkstra",
+      likes: 15,
+    };
+    const result = listHelper.mostLks(blogs);
+    expect(result).toEqual(y);
+  });
+});
+
 describe("test most likes", () => {
   test("most likes", () => {
     const y = {
       title: "React patterns",
       author: "Michael Chan",
-      likes: 10,
+      likes: 11,
     };
     const result = listHelper.favBlgs(blogs);
     expect(result).toEqual(y);

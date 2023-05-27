@@ -31,6 +31,24 @@ const mostBlgs = (b) => {
   return bb;
 };
 
+const mostLks = (b) => {
+  const aa = b.reduce((c, { author, likes }) => {
+    c[author] = c[author] || 0;
+    c[author] += likes;
+    return c;
+  }, {});
+  let maxv = -Infinity;
+  let maxk = "";
+  for (const [key, value] of Object.entries(aa)) {
+    if (value > maxv) {
+      maxv = value;
+      maxk = key;
+    }
+  }
+  const bb = { author: maxk, likes: maxv };
+  return bb;
+};
+
 const ttlikes = (ar) => {
   const reducer = (sum, item) => {
     return sum + item.likes;
@@ -44,4 +62,5 @@ module.exports = {
   dd,
   favBlgs,
   mostBlgs,
+  mostLks,
 };
