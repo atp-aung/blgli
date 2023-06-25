@@ -10,6 +10,13 @@ test("notes are returned as json", async () => {
     .expect("Content-Type", /application\/json/);
 }, 100000);
 
+test("verify id property", async () => {
+  const response = await api.get("/api/blogs");
+  response.body.forEach((blog) => {
+    expect(blog.id).toBeDefined();
+  });
+}, 100000);
+
 afterAll(async () => {
   await mongoose.connection.close();
 });
